@@ -13,23 +13,21 @@ const items = [
 
 const ItemsList = ({ isCollapsed, toggle }) => {
   return (
-
-      <Collapse
-        render={data => (
-          <div>
-            <button className="button is-dark is-large" onClick={toggle}>
-              Collapse
-            </button>
-            <ul className={`list ${isCollapsed && "is-Collapsed"}`}>
-              {items.map(item => (
-                <li className="notification is-primary">{item}</li>
-              ))}
-            </ul>
-            <p> is list collapsed {isCollapsed.toString()}</p>
-          </div>
-        )}
-      />
-
+    <Collapse
+      render={({ isCollapsed, toggle }) => (
+        <div>
+          <button className="button is-dark is-large" onClick={toggle}>
+            Collapse
+          </button>
+          <ul className={`list ${isCollapsed && "is-Collapsed"}`}>
+            {items.map(item => (
+              <li className="notification is-primary">{item}</li>
+            ))}
+          </ul>
+          <p> is list collapsed {isCollapsed.toString()}</p>
+        </div>
+      )}
+    />
   );
 };
 
