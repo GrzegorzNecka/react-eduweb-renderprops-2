@@ -1,5 +1,5 @@
 //https://eduweb.pl/programowanie-i-www/reactjs/react-techniki-zaawansowane/render-props-w-praktyce
-import React from "react";
+import React from 'react';
 
 class Collapse extends React.Component {
   state = {
@@ -18,7 +18,13 @@ class Collapse extends React.Component {
       toggle: this.toggle
     };
 
-    return this.props.render(renderProps);
+    const styleObj = {
+      background: 'red'
+    };
+
+    return <div style={styleObj}>
+        {this.props.render(renderProps)}
+    </div>;
   }
 }
 
